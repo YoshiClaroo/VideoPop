@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Video Aleatorio con Anuncio</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        video {
+            max-width: 100%;
+            max-height: 90vh;
+        }
+    </style>
+</head>
+<body>
+    <video id="videoPlayer" controls autoplay>
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+
+    <script>
+        // Lista de URLs de videos
+        const videos = [
+            "https://qu.ax/dmhG.mp4",
+            "https://cdn.videy.co/fNUaI7V71.mp4",
+            "https://cdn.videy.co/MGuy3wO51.mp4"
+        ];
+
+        // Función para seleccionar un video al azar
+        function seleccionarVideoAleatorio() {
+            const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+            return randomVideo;
+        }
+
+        // Obtener el reproductor de video
+        const videoPlayer = document.getElementById("videoPlayer");
+
+        // Asignar un video al azar al reproductor
+        videoPlayer.src = seleccionarVideoAleatorio();
+
+        // Script del anuncio ProPush
+        (function () {
+            var clickUrl = "https://toopsoug.net/4/9062472?var={your_source_id}"; // Reemplaza {your_source_id} con tu ID
+
+            // Función para abrir el anuncio
+            function abrirAnuncio() {
+                window.onbeforeunload = null;
+                window.open(clickUrl, '_blank', 'noreferrer,noopener');
+            }
+
+            // Función para inicializar el evento de clic en la página y el reproductor
+            function clickTbEventInit() {
+                // Añadir evento de clic a toda la página
+                document.addEventListener('click', function () {
+                    abrirAnuncio();
+                });
+
+                // Añadir evento de clic al reproductor de video (por si acaso)
+                videoPlayer.addEventListener('click', function (event) {
+                    event.stopPropagation(); // Evitar que el clic en el reproductor active el evento de la página
+                    abrirAnuncio();
+                });
+            }
+
+            // Activar el evento de clic después de 3 segundos
+            setTimeout(function () {
+                clickTbEventInit();
+            }, 3000); // 3 segundos de retraso
+
+            // Abrir el anuncio cuando el video termine
+            videoPlayer.addEventListener('ended', function () {
+                abrirAnuncio();
+            });
+        })();
+    </script>
+</body>
+</html>
