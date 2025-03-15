@@ -3,96 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="pushsdk" content="c8a575043528850d58f257f93cb18347">
-    <title>Reproductor de Video Aleatorio con Anuncio</title>
+    <title>Prex Hub</title>
+    <script src='//whephiwums.com/sdk.js' data-zone='9077302' data-sdk='show_9077302'></script>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #333;
-            color: white;
             font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #121212;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
         }
         video {
-            max-width: 100%;
-            max-height: 90vh;
+            width: 100%;
+            max-height: 450px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.8);
+        }
+        .controls {
+            margin-top: 15px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .prev {
+            background-color: #ff5733;
+            color: white;
+        }
+        .next {
+            background-color: #33c4ff;
+            color: white;
+        }
+        button:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <video id="videoPlayer" controls autoplay>
-        Tu navegador no soporta la etiqueta de video.
-    </video>
+
+    <div class="container">
+        <h2>Prex Hub</h2>
+        <video id="videoPlayer" controls autoplay>
+            Tu navegador no soporta la reproducción de video.
+        </video>
+        <div class="controls">
+            <button class="prev" onclick="prevVideo()">⏮ Anterior</button>
+            <button class="next" onclick="nextVideo()">⏭ Siguiente</button>
+        </div>
+
+        <!-- Popunder -->
+        <script type='text/javascript' src='//pl26101764.effectiveratecpm.com/c3/1d/90/c31d90c4c5260679b0fb0042f30aba91.js'></script>
+
+        <script type="text/javascript">
+    atOptions = {
+        'key' : '9306e298b4d477898694abc7ecfa42ed',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+    };
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/9306e298b4d477898694abc7ecfa42ed/invoke.js"></script>
+    </div>
 
     <script>
-        // Lista de URLs de videos
+        // Lista de videos
         const videos = [
-            "https://qu.ax/dmhG.mp4",
-            "https://cdn.videy.co/fNUaI7V71.mp4",
-            "https://cdn.videy.co/MGuy3wO51.mp4",
-            "https://qu.ax/UGTWK.mp4",
-            "https://qu.ax/EeqXw.mp4",
-            "https://qu.ax/OSfLb.mp4",
-            "https://veredictord.info/wp-content/uploads/2025/02/OArmb2N61.mp4",
-            "https://www.xpaja.net/views/videos/2020/03/waoo-pequena-adolescente-hara-que-tu-ritmo-cardiaco-explot/video1080p.mp4",
-            "https://www.xpaja.net/views/videos/2020/03/cuckold-vendo-a--esposa-ser-enrabada/video480p.mp4",
-            "https://www.xpaja.net/views/videos/2020/02/flaquita-en-el-coche/video480p.mp4",
-            "https://www.xpaja.net/views/videos/2020/02/flaca-puta-no-sabia-que-su-cliente-tenia-un-pene-tan-grande/video480p.mp4",
-            "https://www.xpaja.net/views/videos/2020/02/ninfeta-se-masturbando-na-webcam/video480p.mp4",
-            "https://ip344553056.ahcdn.com/key=3VUHaOL+m-Xxn-1falXJGw,s=,,end=1741724911/state=Z9COte8C/buffer=84856:4571,30.2/speed=12122/reftag=0345976730/ssd3/454/8/386102698/videos/8/7/47545ca21e1c71d63f00e83c313d7a0f3998a5/140x250.mp4",
-            "https://www.xpaja.net/views/videos/2020/02/flaquita-de-panama/video1080p.mp4",
-            "https://www.xpaja.net/views/videos/2020/02/le-dijo-que-se-iba-a-venir-adentro-y-ella-no-hizo-caso/video480p.mp4"
+            "https://www.xpaja.net/views/videos/2025/02/quiero-tu-lechita-como-regalo-de-san-valent-n/video720p.mp4",
+            "https://www.xpaja.net/views/videos/2025/02/venga-yo-le-hago-el-favor-pero-si-me-embaraza-lo-mantienes/video1080p.mp4",
+            "https://www.xpaja.net/views/videos/2024/10/una-monja-endemoniada-lo-persigue-hasta-su-casa-y-le-hace-vivir-una-noche-de-placer/video720p.mp4",
+            "https://www.xpaja.net/views/videos/2024/09/folla-con-su-hermanastra-despues-de-una-busqueda-fallida-de-su-perrita-perdida/video720p.mp4",
+            "https://www.xpaja.net/views/videos/2022/01/la-materialista-masturbandose-sin-censura/video480p.mp4",
+            "https://www.xpaja.net/views/videos/2025/03/terminando-mi-rutina-de-ejercicio-con-una-buena-follada/video480p.mp4",
+            "https://www.xpaja.net/views/videos/2025/03/pelirroja-le-pide-a-su-novio-que-le-folle-el-culo/video480p.mp4",
+            "https://www.xpaja.net/views/videos/2025/03/hailey-hitch-new-bg-bathroom-fuck-ppv-video-leaked/video720p.mp4",
+            "https://www.xpaja.net/views/videos/2025/02/kinsley-wyatt-bath-tub-blowjob-ppv-video-leaked/video720p.mp4",
+            "https://www.xpaja.net/views/videos/2025/01/auhneesh-nicole-leaked-spiderman-sex-tape/video720p.mp4"
         ];
 
-        // Función para seleccionar un video al azar
-        function seleccionarVideoAleatorio() {
-            const randomVideo = videos[Math.floor(Math.random() * videos.length)];
-            return randomVideo;
-        }
-
-        // Obtener el reproductor de video
+        let currentIndex = Math.floor(Math.random() * videos.length);
         const videoPlayer = document.getElementById("videoPlayer");
 
-        // Asignar un video al azar al reproductor
-        videoPlayer.src = seleccionarVideoAleatorio();
-
-        // Script del anuncio ProPush
-        (function () {
-            var clickUrl = "https://toopsoug.net/4/9062472?var={your_source_id}"; // Reemplaza {your_source_id} con tu ID
-
-            // Función para abrir el anuncio
-            function abrirAnuncio() {
-                window.onbeforeunload = null;
-                window.open(clickUrl, '_blank', 'noreferrer,noopener');
+        function loadVideo(index) {
+            if (index >= 0 && index < videos.length) {
+                videoPlayer.src = videos[index];
+                videoPlayer.play();
             }
+        }
 
-            // Función para inicializar el evento de clic en la página y el reproductor
-            function clickTbEventInit() {
-                // Añadir evento de clic a toda la página
-                document.addEventListener('click', function () {
-                    abrirAnuncio();
-                });
+        function nextVideo() {
+            currentIndex = (currentIndex + 1) % videos.length;
+            loadVideo(currentIndex);
+            showAd();
+        }
 
-                // Añadir evento de clic al reproductor de video (por si acaso)
-                videoPlayer.addEventListener('click', function (event) {
-                    event.stopPropagation(); // Evitar que el clic en el reproductor active el evento de la página
-                    abrirAnuncio();
-                });
-            }
+        function prevVideo() {
+            currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+            loadVideo(currentIndex);
+            showAd();
+        }
 
-            // Activar el evento de clic después de 3 segundos
-            setTimeout(function () {
-                clickTbEventInit();
-            }, 3000); // 3 segundos de retraso
-
-            // Abrir el anuncio cuando el video termine
-            videoPlayer.addEventListener('ended', function () {
-                abrirAnuncio();
+        function showAd() {
+            show_9077302('pop').then(() => {
+                console.log("Anuncio visto correctamente.");
+            }).catch(e => {
+                console.error("Error en la visualización del anuncio:", e);
             });
-        })();
+        }
+
+        loadVideo(currentIndex);
     </script>
+
 </body>
 </html>
